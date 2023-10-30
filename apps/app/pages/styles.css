@@ -1,0 +1,93 @@
+:root {
+  --color-electric-purple: #6000ff;
+
+  --color-dark-background: #000000;
+  --color-dark-surface: #111111;
+  --color-light-surface: #141414;
+  --color-modal-surface: #181818;
+  --color-modal-tooltip: #1f1f1f;
+  --color-modal-tooltip-light: #242424;
+  --color-modal-tooltip-light-hover: #292929;
+
+  --color-light: #ffffff;
+  --color-light-secondary: #999999;
+  --color-light-tertiary: #707070;
+
+  --color-gradient-start: #6000ff;
+  --color-gradient-stop: #f0c9bd;
+
+  --color-textPrimary: var(--color-light);
+  --color-textSecondary: var(--color-light-secondary);
+  --color-textTertiary: var(--color-light-tertiary);
+
+  --color-background: var(--color-dark-background);
+  --color-surface: var(--color-light-surface);
+  --color-surfaceDark: var(--color-dark-surface);
+  --color-surfaceModal: var(--color-modal-surface);
+  --color-primary: var(--color-electric-purple);
+  --color-primaryGradient: var(--color-gradient-purple);
+
+  --color-gradientStart: var(--color-gradient-start);
+  --color-gradientStop: var(--color-gradient-stop);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* total width */
+body::-webkit-scrollbar {
+  background-color: #fff;
+  width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+  background-color: #242424;
+  border-radius: 16px;
+  border: 4px solid #000;
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #000000;
+  }
+
+  .textOutline {
+    text-shadow: -1px -1px 0 var(--color-textTertiary),
+      0 -1px 0 var(--color-textTertiary), 1px -1px 0 var(--color-textTertiary),
+      1px 0 0 var(--color-textTertiary), 1px 1px 0 var(--color-textTertiary),
+      0 1px 0 var(--color-textTertiary), -1px 1px 0 var(--color-textTertiary),
+      -1px 0 0 var(--color-textTertiary);
+  }
+
+  .imageBreak {
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  }
+
+  .sectionBreak {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 97%);
+  }
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar-track {
+    background: #000000;
+  }
+}

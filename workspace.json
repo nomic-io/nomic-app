@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "app": "apps/app",
+    "app-e2e": "apps/app-e2e",
+    "components": "libs/components",
+    "marketing": "apps/marketing",
+    "marketing-e2e": "apps/marketing-e2e",
+    "utils": "libs/utils"
+  }
+}

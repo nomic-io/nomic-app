@@ -1,0 +1,78 @@
+:root {
+  --color-electric-purple: #6000ff;
+
+  --color-dark-background: #000000;
+  --color-dark-surface: #111111;
+
+  --color-light: #ffffff;
+  --color-light-secondary: #999999;
+  --color-light-tertiary: #707070;
+
+  --color-gradient-start: #6000ff;
+  --color-gradient-stop: #f0c9bd;
+}
+
+@tailwind base;
+
+.theme-light {
+  --color-textPrimary: var(--color-light);
+  --color-textSecondary: var(--color-light-secondary);
+  --color-textTertiary: var(--color-light-tertiary);
+
+  --color-background: var(--color-electric-purple);
+  --color-surface: var(--color-dark-surface);
+  --color-primary: var(--color-electric-purple);
+  --color-primaryGradient: var(--color-gradient-purple);
+
+  --color-gradientStart: var(--color-gradient-start);
+  --color-gradientStop: var(--color-gradient-stop);
+}
+
+.theme-dark {
+  --color-textPrimary: var(--color-light);
+  --color-textSecondary: var(--color-light-secondary);
+  --color-textTertiary: var(--color-light-tertiary);
+
+  --color-background: var(--color-dark-background);
+  --color-surface: var(--color-dark-surface);
+  --color-primary: var(--color-electric-purple);
+  --color-primaryGradient: var(--color-gradient-purple);
+
+  --color-gradientStart: var(--color-gradient-start);
+  --color-gradientStop: var(--color-gradient-stop);
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #000000;
+  }
+
+  .textOutline {
+    text-shadow: -1px -1px 0 var(--color-textTertiary),
+      0 -1px 0 var(--color-textTertiary), 1px -1px 0 var(--color-textTertiary),
+      1px 0 0 var(--color-textTertiary), 1px 1px 0 var(--color-textTertiary),
+      0 1px 0 var(--color-textTertiary), -1px 1px 0 var(--color-textTertiary),
+      -1px 0 0 var(--color-textTertiary);
+  }
+
+  .imageBreak {
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  }
+
+  .sectionBreak {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 97%);
+  }
+
+  .fadeGradient {
+    background-image: linear-gradient(to bottom, black, 30%, transparent),
+      linear-gradient(
+        55deg,
+        var(--color-gradientStart),
+        70%,
+        var(--color-gradientStop)
+      );
+  }
+}
